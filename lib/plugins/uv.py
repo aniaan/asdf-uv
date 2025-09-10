@@ -16,6 +16,6 @@ PLUGIN = Plugin(
         "darwin": "apple-darwin",
         "linux": "unknown-linux-gnu",
     },
-    bin_path=lambda kwargs: f"{kwargs['filename'].rstrip('.tar.gz')}/uv",
+    bin_path=lambda kwargs: f"{kwargs['filename'].removesuffix('.tar.gz')}/uv",
     checksum_filename_template="{filename}.sha256",
 )
